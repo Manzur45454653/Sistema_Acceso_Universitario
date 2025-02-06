@@ -1,5 +1,6 @@
-# Sistema_Acceso_Universitario
-
-Sistema de Control de Acceso mediante QR, en el plantel universitario de la Universidad Autónoma de la Ciudad de México (UACM), con el objetivo de para mejorar la eficiencia y seguridad en la entrada de estudiantes, profesores y 
-personal administrativo, reduciendo tiempos de espera y garantizando el acceso únicamente a personas autorizadas.
-También, busca ser otra alternativa para extravíos u olvidos de la credencial oficial. 
+# UACM_Aaccess_System
+Sistema de acceso mediante QR implementado en JAVA, se conecta a la base de datos.
+Se conecta a dos bases de datos:
+Información de los estudiantes y trabajadores.
+Personas que deseen entrar al plantel, las cuales son considerados visitantes.
+Se guardan imágenes en las bases de datos de manera LONBLOB, las cuales se pueden subir desde el sistema.

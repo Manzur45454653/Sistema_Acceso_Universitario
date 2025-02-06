@@ -1,0 +1,27 @@
+<IfModule mod_rewrite.c>
+# Verifica si el módulo mod_rewrite está habilitado en Apache antes de ejecutar las reglas.
+
+Options -Multiviews
+# Desactiva la funcionalidad "Multiviews" de Apache, que intenta adivinar el archivo solicitado 
+# cuando la extensión no está especificada. Esto puede prevenir errores al resolver URLs personalizadas.
+
+RewriteEngine On
+# Activa el motor de reescritura de Apache.
+
+RewriteBase /CURSO_MVC/public
+# Establece la base del directorio para las reglas de reescritura. 
+# En este caso, indica que el proyecto está alojado en la carpeta /CURSO_MVC/public.
+
+RewriteCond %{REQUEST_FILENAME} !-d
+# Condición 1: Si la solicitud no corresponde a un directorio existente, continúa con las reglas.
+
+RewriteCond %{REQUEST_FILENAME} !-f
+# Condición 2: Si la solicitud no corresponde a un archivo existente, continúa con las reglas.
+
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+
+</IfModule>
+# Redirige cualquier solicitud que pase las condiciones anteriores a index.php, 
+# agregando la parte de la URL capturada (.+) como parámetro "url".
+# [QSA]: Preserva los parámetros de consulta existentes.
+# [L]: Indica que esta es la última regla que se ejecutará si se cumple.
